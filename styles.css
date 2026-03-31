@@ -114,7 +114,7 @@ button[type="submit"]:hover {
   width: 300px;
   height: auto;
   border-radius: 8px;
-  margin-top: 15px;
+  margin-top: 25px;
   padding-top: 5px;
   padding-bottom: 15px;
 }
@@ -140,4 +140,9 @@ h3 {
 }
 .par_content {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#postContainer {
+  max-height: 600px;
+  overflow-y: auto;
 }
