@@ -68,7 +68,7 @@ ul {
   overflow-y: auto;
 }
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .form-group label {
@@ -99,4 +99,16 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #6a99b8;
+}
+
+#par {
+  margin-top: 0;
+  color: #e74c3c;
+}
+
+.del {
+  background-color: red;
+}
+.edit {
+  background-color: green;
 }

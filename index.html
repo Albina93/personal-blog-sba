@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+    <script defer src="./script.js"></script>
     <title>Personal Blog</title>
   </head>
   <body>
     <div class="container">
       <form id="form">
         <h1>Personal Blog</h1>
+        <p id="par"></p>
         <div class="form-group">
           <label for="title">Title:</label>
           <input
@@ -28,6 +29,7 @@
             name="content"
             id="content"
             rows="4"
+            minlength="30"
             placeholder="Write your content here"
             required
           ></textarea>
@@ -37,7 +39,7 @@
       </form>
 
       <aside class="aside">
-        <ul id="list"></ul>
+        <div id="postContainer"></div>
       </aside>
     </div>
   </body>

@@ -1,4 +1,3 @@
-// console.log("hello");
 // Selecting form, input fields
 const form = document.getElementById("form");
 const title = document.getElementById("title");
@@ -7,6 +6,7 @@ const content = document.getElementById("content");
 // error spans
 const titleError = document.getElementById("titleError");
 const contentError = document.getElementById("contentError");
+
 let posts = [];
 
 title.addEventListener("input", validateTitle);
@@ -67,14 +67,16 @@ function handleSubmit(e) {
   }
 }
 
+// saving data to browser
 function savePosts() {
-  localStorage.setItem("posts", JSON.stringify(posts));
+  localStorage.setItem("posts", JSON.stringify(posts)); // convert array to string
 }
 
+// loading data from browser
 function loadPosts() {
   const data = localStorage.getItem("posts");
   if (data) {
-    posts = JSON.parse(data);
+    posts = JSON.parse(data); // converting string back to array
   } else {
     posts = [];
   }
@@ -93,6 +95,25 @@ function displayPosts() {
     `;
     postContainer.appendChild(postDiv);
   });
+}
+
+function deletePost(id) {
+  posts = posts.filter((post) => post.id !== id);
+
+  savePosts();
+  displayPosts();
+}
+
+function editPost(id) {
+  // find the post
+  const post = posts.find((post) => post.id === id);
+
+  // need to fill form inputs with data
+  title.value = post.title;
+  content.value = post.content;
+
+  // need to remove the old version
+  posts = posts.filter((post) => post.id !== id);
 }
 
 loadPosts();
