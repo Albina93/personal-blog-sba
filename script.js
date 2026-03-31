@@ -60,6 +60,10 @@ function handleSubmit(e) {
     displayPosts();
 
     p.textContent = "Submission is success!";
+    setTimeout(() => {
+      p.textContent = ""; // clearing after 2 seconds
+    }, 2000);
+
     // clear all inputs inside the form
     form.reset();
   } else {
@@ -89,7 +93,8 @@ function displayPosts() {
   postContainer.innerHTML = "";
   posts.forEach((post) => {
     const postDiv = document.createElement("div");
-    postDiv.innerHTML = `<h3>${post.title}</h3> <p>${post.content}</p>
+    postDiv.classList.add("post_div");
+    postDiv.innerHTML = `<h3>${post.title}</h3> <p class="par_content">${post.content}</p>
     <button class="del" onclick="deletePost(${post.id})">Delete</button>
     <button class="edit" onclick="editPost(${post.id})">Edit</button>
     `;
